@@ -1,6 +1,6 @@
 'use strict';
 
-const specialChars = {
+var specialChars = {
     //latin
     'à': 'a', 'á': 'a', 'â': 'a', 'ã': 'a', 'ä': 'a', 'å': 'a', 'æ': 'ae',
     'ç': 'c', 'è': 'e', 'é': 'e', 'ê': 'e', 'ë': 'e', 'ì': 'i', 'í': 'i',
@@ -20,8 +20,8 @@ module.exports = class Creator {
     }
 
     getSlug(phrase) {
-        let nameLowarcase = (phrase || '').toLowerCase().trim();
-        let translitereted = nameLowarcase.split('').map(this.translitare).join('');
+        var nameLowarcase = (phrase || '').toLowerCase().trim();
+        var translitereted = nameLowarcase.split('').map(this.translitare).join('');
 
         return translitereted.replace(/[\s\W-]+/g, '-');
     }
